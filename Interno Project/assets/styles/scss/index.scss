@@ -1,0 +1,749 @@
+@use "./reset";
+@use "./colors";
+@use "./fonts";
+
+:root {
+  font-family: fonts.$serif-font;
+  font-size: 10px;
+}
+%button {
+  border: 1px solid colors.$grey-primary2;
+  color: colors.$white;
+  background-color: colors.$grey-primary2;
+  padding: 2.6rem 4.8rem;
+  font-weight: 600;
+  font-family: fonts.$jost-font;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  letter-spacing: 2%;
+  text-decoration: none;
+  border-radius: 1.8rem;
+}
+%arrow {
+  background-color: colors.$light-primary3;
+  border-color: 2px solid colors.$light-primary3;
+  padding: 2.5rem 3rem;
+  border-radius: 10rem;
+  :hover {
+    background-color: colors.$grey;
+  }
+}
+.nav__main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 4.5rem 18rem;
+
+  &__links {
+    display: flex;
+    gap: 3.5rem;
+
+    a {
+      font-family: fonts.$jost-font;
+      text-decoration: none;
+      color: colors.$grey-primary2;
+      font-weight: 400;
+      font-size: 2rem;
+      line-height: 2.5rem;
+      text-align: center;
+    }
+  }
+  &__position {
+    display: flex;
+    gap: 2.5rem;
+  }
+}
+.hidden {
+  display: none;
+}
+.hero {
+  background-image: url(../../images/hero-image.jpg);
+  margin: 0 percentage($number: 0/1920);
+  background-size: cover;
+  max-width: 100%;
+  height: 100.4rem;
+  background-position: center;
+  border-radius: 0 0 0 20rem;
+  margin-bottom: 20rem;
+  &__title {
+    font-weight: 400;
+    font-size: 8.5rem;
+    line-height: 10.6rem;
+    color: colors.$grey-primary2;
+    width: 56.7rem;
+  }
+  &__text {
+    font-family: fonts.$jost-font;
+    font-weight: 400;
+    font-size: 2.2rem;
+    line-height: 3.3rem;
+    letter-spacing: 1%;
+    color: colors.$grey;
+    width: 55.3rem;
+  }
+  &__btn {
+    @extend %button;
+  }
+  &__intro {
+    display: flex;
+    flex-direction: column;
+    width: 21.9rem;
+    gap: 2.1rem;
+    position: absolute;
+    right: 90rem;
+    top: 46.8rem;
+    left: 18rem;
+    bottom: 32.9rem;
+  }
+  &__position {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+}
+.articles {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4.2rem;
+  margin: 0 18rem;
+  &__parts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h5 {
+      font-weight: 400;
+      font-size: 2.5rem;
+      color: colors.$grey-primary2;
+      line-height: 3.1rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    p {
+      font-family: fonts.$jost-font;
+      font-weight: 400;
+      font-size: 2.2rem;
+      line-height: 3.3rem;
+      letter-spacing: 1%;
+      color: colors.$grey;
+      text-align: center;
+      margin-bottom: 5.2rem;
+    }
+    a {
+      font-family: fonts.$jost-font;
+      font-weight: 600;
+      font-size: 1.8rem;
+      line-height: 2.2rem;
+      letter-spacing: 2%;
+      text-align: center;
+      color: colors.$grey;
+      text-decoration: none;
+    }
+  }
+}
+.example {
+  display: flex;
+  gap: 7.5rem;
+  margin: 24rem 18rem;
+  &__position {
+    display: flex;
+    flex-direction: column;
+    a {
+      @extend %button;
+      width: 23.8rem;
+      height: 7.5rem;
+      p {
+        width: 16rem;
+      }
+    }
+  }
+  &__banner {
+    h3 {
+      font-weight: 400;
+      font-size: 5rem;
+      line-height: 6.2rem;
+      letter-spacing: 2%;
+      color: colors.$grey-primary2;
+      width: 42rem;
+      margin-bottom: 3.3rem;
+    }
+    p {
+      font-family: fonts.$jost-font;
+      font-weight: 400;
+      font-size: 2.2rem;
+      line-height: 3.3rem;
+      letter-spacing: 1%;
+      color: colors.$grey-primary2;
+      margin-bottom: 4.5rem;
+    }
+  }
+  &__contact {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    margin-bottom: 4.7rem;
+    &__phone {
+      border: 2px solid colors.$light-primary3;
+      background-color: colors.$light-primary3;
+      padding: 3rem 3.1rem;
+      width: 9.3rem;
+      height: 9.3rem;
+      border-radius: 50%;
+    }
+    &--position {
+      h6 {
+        font-family: fonts.$jost-font;
+        font-weight: 700;
+        font-size: 2.4rem;
+        line-height: 3.6rem;
+        letter-spacing: 1%;
+        color: colors.$grey;
+      }
+      p {
+        font-family: fonts.$jost-font;
+        font-weight: 400;
+        font-size: 2.2rem;
+        line-height: 3.3rem;
+        letter-spacing: 1%;
+        color: colors.$grey;
+      }
+    }
+  }
+  &__pic {
+    border-radius: 0 33rem 0 15rem;
+    width: 65.3rem;
+    height: 70rem;
+  }
+}
+.feedbacks {
+  background-color: colors.$light-primary3;
+  margin: 20rem 10rem;
+  border-radius: 7rem;
+  h3 {
+    font-weight: 400;
+    font-size: 5rem;
+    line-height: 6.2rem;
+    letter-spacing: 2%;
+    text-align: center;
+    padding: 8.8rem 18rem 3.8rem 18rem;
+  }
+  &__position {
+    display: flex;
+    gap: 2rem;
+    padding: 8.8rem 2.4rem;
+  }
+  &__clients {
+    background-color: colors.$white;
+    border-radius: 3rem;
+    padding: 5rem 3rem;
+    p {
+      font-family: fonts.$jost-font;
+      font-weight: 400;
+      font-size: 2.2rem;
+      line-height: 3.3rem;
+      letter-spacing: 1%;
+      color: colors.$grey;
+    }
+    &--mod {
+      display: flex;
+      gap: 2.3rem;
+      align-items: flex-start;
+
+      margin-bottom: 2.5rem;
+      h6 {
+        font-weight: 400;
+        font-size: 2.3rem;
+        line-height: 3.75rem;
+        letter-spacing: 1%;
+        color: colors.$grey-primary2;
+      }
+      p {
+        font-family: fonts.$jost-font;
+        font-weight: 400;
+        font-size: 1.8rem;
+        line-height: 2.7rem;
+        letter-spacing: 1%;
+        color: colors.$grey;
+      }
+    }
+  }
+}
+.logos {
+  display: flex;
+  gap: 9rem;
+  margin: 15rem 20rem;
+}
+.project {
+  margin: 15rem 10rem;
+  &__items {
+    h6 {
+      font-weight: 400;
+      font-size: 2.5rem;
+      line-height: 3.1rem;
+      letter-spacing: 2%;
+      color: colors.$grey-primary2;
+    }
+    p {
+      font-family: fonts.$jost-font;
+      font-weight: 400;
+      font-size: 2.2rem;
+      line-height: 3.3rem;
+      letter-spacing: 1%;
+      color: colors.$grey;
+    }
+    a {
+      @extend %arrow;
+    }
+    &--arrow {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__banner {
+    h3 {
+      font-weight: 400;
+      font-size: 5rem;
+      line-height: 6.2rem;
+      letter-spacing: 2%;
+      text-align: center;
+      color: colors.$grey-primary2;
+      margin-bottom: 0.8rem;
+    }
+    p {
+      font-family: fonts.$jost-font;
+      font-weight: 400;
+      font-size: 2.2rem;
+      line-height: 3.3rem;
+      letter-spacing: 1%;
+      text-align: center;
+      margin-bottom: 9.3rem;
+      margin-left: 20rem;
+      width: 70rem;
+    }
+  }
+  &__position {
+    display: flex;
+    gap: 10.4rem;
+  }
+  &__kitchen {
+    width: 52rem;
+    height: 54rem;
+    margin-bottom: 2.4rem;
+    margin-top: 5.4rem;
+  }
+}
+.numbers {
+  display: flex;
+  gap: 6rem;
+  background-color: colors.$light-primary3;
+  padding: 15rem 25rem;
+  &__stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid colors.$light-brown;
+    padding-right: 5rem;
+
+    h3 {
+      font-weight: 400;
+      font-size: 8.5rem;
+      line-height: 10.6rem;
+      letter-spacing: 2%;
+      color: colors.$brown-primary1;
+    }
+    p {
+      font-family: fonts.$jost-font;
+      font-weight: 400;
+      font-size: 1.8rem;
+      line-height: 3.3rem;
+      letter-spacing: 1%;
+      color: colors.$grey;
+    }
+  }
+  &__stats1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h3 {
+      font-weight: 400;
+      font-size: 8.5rem;
+      line-height: 10.6rem;
+      letter-spacing: 2%;
+      color: colors.$brown-primary1;
+    }
+    p {
+      font-family: fonts.$jost-font;
+      font-weight: 400;
+      font-size: 1.8rem;
+      line-height: 3.3rem;
+      letter-spacing: 1%;
+      color: colors.$grey;
+    }
+  }
+}
+.news {
+  margin: 20rem 18rem;
+  &__banner {
+    h3 {
+      font-weight: 400;
+      font-size: 5rem;
+      line-height: 6.2rem;
+      letter-spacing: 2%;
+      text-align: center;
+      color: colors.$grey-primary2;
+    }
+    h6 {
+      font-family: fonts.$jost-font;
+      font-weight: 400;
+      font-size: 2.2rem;
+      line-height: 3.3rem;
+      letter-spacing: 1%;
+      text-align: center;
+      color: colors.$grey;
+      margin-bottom: 5.2rem;
+    }
+  }
+  &__position {
+    display: flex;
+    gap: 2.7rem;
+  }
+  &__items {
+    display: flex;
+    flex-direction: column;
+    img {
+      border-radius: 6.2rem 6.2rem 0 0;
+    }
+    &--design {
+      position: absolute;
+      left: 201px;
+      top: 6700px;
+    }
+    &--design1 {
+      position: absolute;
+      top: 6700px;
+      left: 570px;
+    }
+    &--design2 {
+      position: absolute;
+      top: 6700px;
+      right: 300px;
+    }
+    p {
+      font-family: fonts.$jost-font;
+      font-weight: 400;
+      font-size: 1.6rem;
+      line-height: 2rem;
+      letter-spacing: 1%;
+      color: colors.$grey;
+      border: 1px solid colors.$white;
+      background-color: white;
+      padding: 0.8rem 1rem;
+    }
+
+    &--date {
+      display: flex;
+      gap: 6.5rem;
+      h6 {
+        font-weight: 400;
+        font-family: fonts.$jost-font;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        letter-spacing: 1%;
+        color: colors.$grey;
+        padding-right: 12rem;
+      }
+    }
+    a {
+      font-weight: 400;
+      font-size: 2.5rem;
+      line-height: 3.1rem;
+      letter-spacing: 2%;
+      color: colors.$grey-primary2;
+      text-decoration: none;
+      margin-top: 2.1rem;
+      margin-bottom: 3rem;
+    }
+  }
+}
+.join {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: colors.$grey-primary2;
+  border-radius: 7rem;
+  margin: 20rem 10rem 20rem 15rem;
+  padding: 10rem 3rem;
+  h2 {
+    font-weight: 400;
+    font-size: 5rem;
+    line-height: 6.2rem;
+    text-align: center;
+    color: colors.$white;
+    margin-bottom: 1.1rem;
+  }
+  p {
+    font-family: fonts.$jost-font;
+
+    font-weight: 400;
+    font-size: 2.2rem;
+    line-height: 3.3rem;
+    text-align: center;
+    color: colors.$white;
+    letter-spacing: 1%;
+    margin-bottom: 3.2rem;
+  }
+  a {
+    @extend %button;
+    background-color: colors.$brown-primary1;
+  }
+}
+.info {
+  display: flex;
+  gap: 9rem;
+  margin: 13rem 7.5rem 13rem 18rem;
+  &__logo {
+    p {
+      font-family: fonts.$jost-font;
+      font-weight: 400;
+      font-size: 2.2rem;
+      line-height: 3.3rem;
+      letter-spacing: 1%;
+      color: colors.$grey;
+      margin-top: 1.8rem;
+      margin-bottom: 3.1rem;
+    }
+  }
+  &__category {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    h6 {
+      font-weight: 400;
+      font-size: 2.5rem;
+      line-height: 3.1rem;
+      color: colors.$grey-primary2;
+    }
+    a {
+      font-family: fonts.$jost-font;
+      font-weight: 400;
+      font-size: 2.2rem;
+      line-height: 6.6rem;
+      letter-spacing: 1%;
+      color: colors.$grey;
+      text-decoration: none;
+      width: 12rem;
+    }
+    &--contact {
+      h6 {
+        font-weight: 400;
+        font-size: 2.5rem;
+        line-height: 3.1rem;
+        color: colors.$grey-primary2;
+        margin-bottom: 2.6rem;
+      }
+      a {
+        font-family: fonts.$jost-font;
+        font-weight: 400;
+        font-size: 2.2rem;
+        line-height: 3rem;
+        letter-spacing: 1%;
+        color: colors.$grey;
+        text-decoration: none;
+        width: 25.8rem;
+        display: flex;
+        flex-direction: column;
+
+        margin-bottom: 2.6rem;
+      }
+    }
+  }
+}
+.copyright {
+  font-family: fonts.$jost-font;
+  font-weight: 400;
+  font-size: 2.2rem;
+  line-height: 3.3rem;
+  color: colors.$grey;
+  margin: 17rem 30rem 5.5rem 30rem;
+}
+// ABOUT CSS
+
+// .hidden {
+//   display: none;
+// }
+
+.about__hero {
+  &__img {
+    background-repeat: no-repeat;
+
+    position: relative;
+    max-width: 100%;
+  }
+  &__title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-width: 50.3rem;
+    margin: 0 auto;
+    top: -15rem;
+    padding-top: 15.3rem;
+    gap: 1rem;
+    border-radius: 3.7rem 3.7rem 0 0;
+    padding: 4.1rem;
+    background-color: colors.$white;
+    h2 {
+      font-weight: 400;
+      font-size: 5rem;
+      line-height: 6.2rem;
+      color: colors.$grey-primary2;
+      background-color: white;
+    }
+    h6 {
+      font-family: fonts.$jost-font;
+      font-weight: 400;
+      font-size: 2.2rem;
+      line-height: 3.3rem;
+      letter-spacing: 1%;
+      color: colors.$grey;
+    }
+  }
+}
+.quote {
+  &__img {
+    display: flex;
+
+    gap: 50rem;
+    margin-left: 22rem;
+  }
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    position: absolute;
+    left: 58rem;
+    right: 58rem;
+    top: 64rem;
+  }
+  h1 {
+    font-weight: 400;
+    font-style: italic;
+    font-size: 8.5rem;
+    line-height: 10rem;
+    text-align: center;
+  }
+  h5 {
+    font-weight: 400;
+    font-style: italic;
+    font-size: 3.5rem;
+    line-height: 4.3rem;
+    text-align: center;
+    letter-spacing: 2%;
+    width: 75rem;
+  }
+  h6 {
+    font-family: fonts.$jost-font;
+    font-weight: 400;
+    font-size: 2.5rem;
+    line-height: 3.7rem;
+    text-align: center;
+    letter-spacing: 1%;
+    width: 20.9rem;
+    color: colors.$grey;
+  }
+}
+.about__article {
+  img {
+    border-radius: 10rem;
+  }
+  margin: 20rem 9rem;
+  display: flex;
+  gap: 4.1rem;
+  &__text {
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+      font-size: 5rem;
+      line-height: 6.2rem;
+      font-weight: 400;
+      letter-spacing: 2%;
+      color: colors.$grey-primary2;
+      margin-bottom: 2.3rem;
+    }
+    p {
+      font-family: fonts.$jost-font;
+      font-weight: 400;
+      font-size: 2.2rem;
+      line-height: 3.3rem;
+      letter-spacing: 1%;
+      color: colors.$grey;
+      width: 50rem;
+      margin-bottom: 4.1rem;
+    }
+    a {
+      @extend %button;
+      width: 25rem;
+    }
+  }
+}
+.about__feedbacks {
+  padding: 16rem 6rem;
+
+  background-color: colors.$light-primary3;
+  h1 {
+    font-weight: 400;
+    font-size: 5rem;
+    line-height: 6.2rem;
+    letter-spacing: 2%;
+    text-align: center;
+    color: colors.$grey-primary2;
+    width: 54rem;
+    margin-left: 40rem;
+    margin-bottom: 4rem;
+  }
+  &__ppl {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.form {
+  margin-top: 21.9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h1 {
+    font-weight: 400;
+    font-size: 5rem;
+    line-height: 6.2rem;
+    letter-spacing: 2%;
+    text-align: Center;
+    width: 63rem;
+    margin-bottom: 7.7rem;
+  }
+  &__input {
+    &--first {
+      margin-bottom: 5.7rem;
+      display: flex;
+      gap: 4rem;
+    }
+    &--second {
+      padding-bottom: 12rem;
+      margin-bottom: 7.5rem;
+    }
+    input {
+      border: 0;
+      outline: 0;
+      background: transparent;
+      border-bottom: 1px solid black;
+    }
+  }
+  a {
+    @extend %button;
+  }
+}
